@@ -6,7 +6,8 @@ import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository {
 
-//    Q. 동시성문제 / static 쓰는 이유
+//    Q. static 키워드 쓰는 이유
+//    A. 클래스 변수로 만들어 모든 인스턴스가 공통된 값을 공유할 수 있도록 만들기 위해 static 변수 사용
 
 //    실무에서는 동시성 문제로 인해 공유되는 변수일 경우에는 HashMap 이 아닌 ConcurrentHashMap 을 써야됨 https://pplenty.tistory.com/17 참조 링크
     private static Map<Long, Member> store = new HashMap<>();
@@ -36,5 +37,9 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() {
+        store.clear();
     }
 }
