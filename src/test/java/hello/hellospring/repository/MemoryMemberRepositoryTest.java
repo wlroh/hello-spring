@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 
 class MemoryMemberRepositoryTest {
 
-//    인터페이스로 쓰는 이유
+//    TODO: Q. 인터페이스로 쓰는 이유
 //    MemberRepository repository = new MemoryMemberRepository();
     MemoryMemberRepository repository = new MemoryMemberRepository();
 

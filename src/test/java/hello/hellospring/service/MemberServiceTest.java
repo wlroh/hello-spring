@@ -18,6 +18,7 @@ class MemberServiceTest {
     @BeforeEach
     public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
+//        DI 의존성 주입
         memberService = new MemberService(memberRepository);
     }
 
